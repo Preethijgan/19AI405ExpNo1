@@ -43,6 +43,7 @@
 
 <h4>PROGRAM : </h4>
 
+```
 
 import random
 import time
@@ -240,6 +241,7 @@ if   __name__ == "__main__":
         time.sleep(3)
 
 
+```
 
 
 <h5>OUTPUT: </h5>
