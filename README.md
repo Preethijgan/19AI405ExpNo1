@@ -41,8 +41,9 @@
 <h3>STEP 5:</h3>
 <p>Measure the performance parameters: For each treatment performance incremented, for each movement performance decremented</p>
 
-<H3>PROGRAM:</H3>
-```
+<h4>PROGRAM : </h4>
+
+
 import random
 import time
 
@@ -63,7 +64,7 @@ class Agent(Thing):
     """
         An Agent is a subclass of Thing """
 
-    def _init_(self, program=None):
+    def __init__(self, program=None):
         self.alive = True
         self.performance = 0 
         self.program = program
@@ -116,7 +117,7 @@ class Environment:
     The environment keeps a list of .things and .agents (which is a subset of .things). Each agent has a .performance slot, initialized to 0.
     Each thing has a .location slot, even though some environments may not need this."""
 
-    def _init_(self):
+    def __init__(self):
         self.things = [] 
         self.agents = []
         #room_A, room_B = (0,0), (1,0) # The two locations for the Doctor to treat
@@ -185,8 +186,8 @@ class Environment:
 class TrivialDoctorEnvironment(Environment):
     """This environment has two locations, A and B. Each can be unhealthy or healthy. The agent perceives its location and the location's status. This serves as an example of how to implement a simple Environment."""
 
-    def _init_(self):
-        super()._init_()
+    def __init__(self):
+        super().__init__()
         #room_A, room_B = (0,0), (1,0) # The two locations for the Doctor to treat
         self.status = {room_A: random.choice(["healthy", "unhealthy"]), room_B: random.choice(["healthy", "unhealthy"]),}
 
@@ -219,7 +220,7 @@ class TrivialDoctorEnvironment(Environment):
     def default_location(self, thing):
            
         return random.choice([room_A, room_B])
-if   _name_ == "_main_":
+if   __name__ == "__main__":
     
     agent = TableDrivenDoctorAgent() 
     environment = TrivialDoctorEnvironment() 
@@ -238,12 +239,17 @@ if   _name_ == "_main_":
         print("Performance : {0}".format(agent.performance)) 
         time.sleep(3)
 
-```
 
-<H3>OUTPUT:</H3>
-![Screenshot 2025-03-24 084457](https://github.com/user-attachments/assets/4ba7d771-50bd-4644-ad5a-22b2d7252241)
 
-<H3>RESULT:</H3>
- The PEAS description for the given AI problem and developing an AI agent is executed successsfully.
+
+<h5>OUTPUT: </h5>
+
+
+![Screenshot 2025-03-24 084457](https://github.com/user-attachments/assets/ccccbb92-bfea-4732-bf05-370966da2eb4)
+
+
+<H6>RESULT: </H6>
+the PEAS description for the given AI problem and develop an AI agent is executed successfully.
+
 
 
